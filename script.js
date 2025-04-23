@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Category Navigation
   const navItems = document.querySelectorAll(".nav-item")
 
   navItems.forEach((item) => {
@@ -11,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  // Dropdown Menu Handling - Fix for Elektronik and Moda dropdowns
   const elektronikItem = document.getElementById("elektronik")
   const modaItem = document.getElementById("moda")
 
@@ -68,7 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  // Favorite Button Toggle
   const favoriteButtons = document.querySelectorAll(".favorite-btn")
 
   favoriteButtons.forEach((btn) => {
@@ -87,7 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  // Left Banner Slider (Main Banner)
   const leftSlides = document.querySelectorAll(".left-slide")
   const leftPrevBtn = document.querySelector(".left-prev")
   const leftNextBtn = document.querySelector(".left-next")
@@ -112,7 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
       showLeftSlide(nextIndex)
     })
 
-    // Auto slide for left banner
     const leftSlideInterval = setInterval(() => {
       let nextIndex = leftCurrentIndex + 1
       if (nextIndex >= leftSlides.length) nextIndex = 0
@@ -120,7 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 5000)
   }
 
-  // Electronics Deals Slider (Right Banner)
   const dealsSlides = document.querySelectorAll(".deals-slide")
   const dealsPrevBtn = document.querySelector(".deals-prev")
   const dealsNextBtn = document.querySelector(".deals-next")
@@ -138,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let nextIndex = dealsCurrentIndex + 1
       if (nextIndex >= dealsSlides.length) nextIndex = 0
       showDealsSlide(nextIndex)
-    }, 3000) // Change slide every 3 seconds
+    }, 3000)
   }
 
   function stopDealsAutoSlide() {
@@ -162,11 +156,9 @@ document.addEventListener("DOMContentLoaded", () => {
       startDealsAutoSlide()
     })
 
-    // Start auto slide for deals
     startDealsAutoSlide()
   }
 
-  // Recommendations Slider
   const recContainer = document.querySelector(".rec-container")
   const recPrevBtn = document.querySelector(".rec-prev")
   const recNextBtn = document.querySelector(".rec-next")
@@ -181,7 +173,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  // PROMO GÖRSELLERİ MOCK API'DEN ÇEK
 fetch("https://run.mocky.io/v3/b6143c71-5c1d-475d-8049-0ae14e821e7d")
 .then((res) => res.json())
 .then((data) => {
@@ -196,7 +187,6 @@ fetch("https://run.mocky.io/v3/b6143c71-5c1d-475d-8049-0ae14e821e7d")
 })
 .catch((err) => console.error("Promo görselleri yüklenemedi:", err));
 
-// ELEKTRONİK FIRSATLAR GÖRSELLERİ MOCK API'DEN ÇEK
 fetch("https://run.mocky.io/v3/52e80514-a10f-4e5d-8680-f119a1ade551")
   .then((res) => res.json())
   .then((data) => {
@@ -211,7 +201,6 @@ fetch("https://run.mocky.io/v3/52e80514-a10f-4e5d-8680-f119a1ade551")
   })
   .catch((err) => console.error("Elektronik fırsatlar görselleri yüklenemedi:", err));
 
-  // BANNER GÖRSELLERİ MOCK API'DEN ÇEK
 fetch("https://run.mocky.io/v3/25409049-ec59-4f76-96f9-3445002800db")
 .then((res) => res.json())
 .then((data) => {
@@ -226,7 +215,6 @@ fetch("https://run.mocky.io/v3/25409049-ec59-4f76-96f9-3445002800db")
 })
 .catch((err) => console.error("Banner görselleri yüklenemedi:", err));
 
-// SIZE ÖZEL ÖNERİLER GÖRSELLERİ MOCK API'DEN ÇEK
 fetch("https://run.mocky.io/v3/5020c30b-6b91-4867-9b69-f322d1d24982")
   .then((res) => res.json())
   .then((data) => {
@@ -240,6 +228,4 @@ fetch("https://run.mocky.io/v3/5020c30b-6b91-4867-9b69-f322d1d24982")
     });
   })
   .catch((err) => console.error("Size özel öneri görselleri yüklenemedi:", err));
-
-
 })
